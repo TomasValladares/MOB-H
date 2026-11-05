@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './Homescreen'; 
 import Ranking from './Ranking';
 import Buscador from './Buscador';
+import Reviews from './Reviews';
 
 const RootStack = createNativeStackNavigator({
   screens: {
@@ -15,6 +16,9 @@ const RootStack = createNativeStackNavigator({
     },
     Buscador: {
       screen: Buscador,
+    },
+    Reviews: {
+      screen: Reviews,
     },
   },
 });

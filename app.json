@@ -25,6 +25,9 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "github.com/TomasValladares/MOB-H @ Nov 2, 2026"
+    "description": "github.com/TomasValladares/MOB-H @ Nov 2, 2026",
+    "plugins": [
+      "expo-status-bar"
+    ]
   }
 }
