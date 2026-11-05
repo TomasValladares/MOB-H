@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "230088740203",
+    "project_id": "ramosrank-uc",
+    "storage_bucket": "ramosrank-uc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230088740203:android:ab3342877d2a749d00102e",
+        "android_client_info": {
+          "package_name": "com.ramosrankuc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Eb4qvk7OoDH8JRU3CdstAsyrto1VjRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
