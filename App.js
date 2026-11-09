@@ -5,6 +5,7 @@ import Ranking from './Ranking';
 import Buscador from './Buscador';
 import Reviews from './Reviews';
 
+
 const RootStack = createNativeStackNavigator({
   screens: {
     Home: {
