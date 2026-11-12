@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, FlatList, StyleSheet } from 'react-native';
+import { Text, View, ScrollView, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { collection, getDocs } from "firebase/firestore";
 import { db }  from './Firebase';
+import { useNavigation } from '@react-navigation/native';
 
-const Item = ({data}) => (
-  <View style={styles.item}>
+const Item = ({data, onPress}) => (
+  <TouchableOpacity style={styles.item} onPress={onPress}>
     <Text style={styles.title}>{data.nombre}</Text>
-  </View>
+    <Text style={styles.title}>{data.sigla}</Text> 
+  </TouchableOpacity>
 );
 
-export default function Buscador({route}) {
+export default function Buscador() {
   const [listaRamos, setListaRamos] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     // Definimos la función asíncrona (porque conectarse a internet toma tiempo)
@@ -37,7 +40,15 @@ export default function Buscador({route}) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <FlatList
         data={listaRamos}
-        renderItem={({item}) => <Item data={item.data} />}
+        renderItem={({item}) => 
+        <Item 
+          data={item.data} 
+          onPress={() =>
+          navigation.navigate('Reviews', {
+            sigla: item.data.sigla, 
+            titulo: item.data.nombre
+          })
+        } />}
         keyExtractor={item => item.id}
       />
     </View>

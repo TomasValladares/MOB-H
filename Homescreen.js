@@ -19,13 +19,7 @@ export default function HomeScreen() {
           navigation.navigate('Buscador')
         }
       />
-
-      <Button 
-        title="Reseñas"
-        onPress={() =>
-          navigation.navigate('Reviews')
-        }
-      />
+      
     </View>
   );
 }

@@ -3,37 +3,35 @@
 // Retrieved 2026-11-07, License - CC BY-SA 4.0
 
 import React, { useState } from "react";
-import { FaStar } from "react-icons/fa";
+import { FontAwesome } from '@expo/vector-icons';
+import { View, TouchableOpacity } from 'react-native';
 
 const StarRating = (props) => {
   console.log(props);
   return (
-    <div>
+    <View>
       {Array(5)
         .fill(0)
         .map((_, idx) => (
-          <label key={idx}>
-            <input
-              type="radio"
-              name="rating"
-              onChange={() => props.setRating(idx)}
-              value={props.ratingValue}
-              checked={idx === props.ratingValue}
+          <TouchableOpacity key={idx} onPress={() => props.setRating(idx + 1)}>
+            <FontAwesome 
+              name="star" 
+              size={32} 
+              color={idx < props.ratingValue ? "#01af93" : "#bbb"} 
             />
-            <FaStar color={idx < 3 ? "#01af93" : "#bbb"} />
-          </label>
+          </TouchableOpacity>
         ))}
-    </div>
+    </View>
   );
 };
 
 export const RatingContainer = () => {
-  const [rate, setRate] = useState(3);
+  const [estrellas, setEstrellas] = useState(3);
 
   return (
-    <div>
-      <StarRating setRating={(val) => setRate(val)} ratingValue={rate} />
-    </div>
+    <View>
+      <StarRating setRating={setEstrellas} ratingValue={estrellas} />
+    </View>
   );
 };
 
