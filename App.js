@@ -4,10 +4,16 @@ import HomeScreen from './Homescreen';
 import Ranking from './Ranking';
 import Buscador from './Buscador';
 import Reviews from './Reviews';
+import Inicio from './inicio';
 
 
 const RootStack = createNativeStackNavigator({
+  initialRouteName: 'Inicio', 
   screens: {
+    Inicio : {
+      screen: Inicio,
+      options: {headerShown: false},
+    },
     Home: {
       screen: HomeScreen,
       options: {title: 'RamosRank UC'},
