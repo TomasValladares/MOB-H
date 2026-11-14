@@ -12,7 +12,7 @@ const Estrellas = ({ promedio, size = 20 }) => {
     <View>
       <Text style={{ fontSize: size, color: '#bbb' }}>★★★★★</Text>
       <View style={[styles.recorte, { width: `${porcentaje}%` }]}>
-        <Text style={{ fontSize: size, color: '#f5b301' }} numberOfLines={1}>
+        <Text style={{ fontSize: size, color: '#f5b301', width: size * 6}}>
           ★★★★★
         </Text>
       </View>

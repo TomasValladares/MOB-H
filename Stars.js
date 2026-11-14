@@ -25,8 +25,7 @@ const StarRating = (props) => {
   );
 };
 
-export const RatingContainer = () => {
-  const [estrellas, setEstrellas] = useState(3);
+export const RatingContainer = ({estrellas, setEstrellas}) => {
 
   return (
     <View>
