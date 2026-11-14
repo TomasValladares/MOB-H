@@ -8,6 +8,7 @@ export default function Reviews({route}) {
     const [text, onChangeText] = useState('');
     const [estrellas, setEstrellas] = useState(3);
     const enviarresena = async () => {
+      console.log("Estrellas al enviar:", estrellas);
       try {
         const resena = {sigla: route.params.sigla, titulo: route.params.titulo, comentario: text, calificacion: estrellas}
         const docEnviado = await addDoc(collection(db, "resenas"), resena);
